@@ -1,36 +1,32 @@
-//parent class
+//parent class or super class
 class Teacher {
-  String name = '';
-  String position = '';
-  int age = 0;
+  String name;
+  String position;
+  int age;
 
-  Teacher(String name, String position, int age) {
-    this.name = name;
-    this.age = age;
-    this.position = position;
+  Teacher({
+    this.name = '',
+    this.position = '',
+    this.age = 0,
+  });
 
-    void display() {
-      print(
-          'Name of teacher is $name , position is $position and his age is $age');
-    }
+  void display() {
+    print(
+        'Name of teacher is $name , position is $position and his age is $age');
   }
 }
 
-//child class
-//TODO1 : declare the class
-class Student extends Teacher {
-//TODO2: DECLARE THE PROPERTIES
+//child class or base class
 
-//TODO3: DECLARE THE CONSTRUCTOR
-  Student(String name, String position, int age) : super(name, position, age) {}
-//TODO 4: DECLARE THE METHODS
-  @override
+class Student extends Teacher {
+  Student(String name, int age) : super(name: name, age: age) {}
+
   void display() {
     print('Name of student is $name and his age is $age');
   }
 }
 
 void main() {
-  Student s1 = Student('binod', 'head', 23);
+  Student s1 = Student('binod', 23);
   s1.display();
 }
