@@ -1,7 +1,8 @@
 void main() {
-  double a = 0;
-  double b = 1;
-
-  double c = b / a;
-  print(c);
+  List<String> book = ['apple', 'orange', 'mango'];
+  try {
+    book[4] = 'pine';
+  } catch (e) {
+    print('The exception is ' + e.toString());
+  }
 }
